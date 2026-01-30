@@ -8,7 +8,7 @@ FILES		:= Animal.cpp \
 OBJ			:= $(FILES:.cpp=.o)
 HEADER		:= Animal.hpp \
 				Cat.hpp \
-				Dog.hpp \
+				Dog.hpp
 
 
 WRONG		:= wrong_animal
