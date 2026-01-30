@@ -35,3 +35,31 @@ void Dog::makeSound() const
 {
     std::cout << _type << " Woof, Woof" << std::endl;
 }
+
+void Dog::setBrain(std::string word, int length)
+{
+    if (length > 100)
+    {
+        std::cerr << "Ideas array can't be more than a 100." << std::endl;
+        return ;
+    }
+    for (int i = 0; i < length; i++)
+        _brain->ideas[i] = word;
+}
+
+void Dog::getBrain(int index)
+{
+    if (index > 100)
+    {
+        std::cerr << "Ideas array can't be more than a 100." << std::endl;
+        return ;
+    }
+    std::cout << "[ ";
+    for(int i = 0; i < index; i++)
+    {
+        std::cout << _brain->ideas[i];
+        if (i+1 != index)
+            std::cout << ", ";
+    }
+    std::cout << " ]" << std::endl;
+}

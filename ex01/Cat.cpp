@@ -4,7 +4,6 @@ Cat::Cat()
 {
     std::cout << "Cat Default Constructor called" << std::endl;
     _type = "Cat";
-    std::cout << "f" << std::endl;
     _brain = new Brain();
 }
 
@@ -35,4 +34,32 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
     std::cout << _type << " Meow, Meow" << std::endl;
+}
+
+void Cat::setBrain(std::string word, int length)
+{
+    if (length > 100)
+    {
+        std::cerr << "Ideas array can't be more than a 100." << std::endl;
+        return ;
+    }
+    for (int i = 0; i < length; i++)
+        _brain->ideas[i] = word;
+}
+
+void Cat::getBrain(int index)
+{
+    if (index > 100)
+    {
+        std::cerr << "Ideas array can't be more than a 100." << std::endl;
+        return ;
+    }
+    std::cout << "[ ";
+    for(int i = 0; i < index; i++)
+    {
+        std::cout << _brain->ideas[i];
+        if (i+1 != index)
+            std::cout << ", ";
+    }
+    std::cout << " ]" << std::endl;
 }
