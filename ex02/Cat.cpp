@@ -7,7 +7,7 @@ Cat::Cat()
     _brain = new Brain();
 }
 
-Cat::Cat(const Cat& copy) : Animal(copy)
+Cat::Cat(const Cat& copy) : AAnimal(copy)
 {
     std::cout << "Cat Copy Constructor called" << std::endl;
     _brain = new Brain(*copy._brain);
@@ -18,7 +18,7 @@ Cat& Cat::operator=(const Cat& copy)
     std::cout << "Cat Copy Assignment Operator called" << std::endl;
     if (this != &copy)
     {
-        Animal::operator=(copy);
+        AAnimal::operator=(copy);
         delete _brain;
         _brain = new Brain(*copy._brain);
     }
@@ -33,7 +33,7 @@ Cat::~Cat()
 
 void Cat::makeSound()
 {
-    std::cout << _type << " Meow, Meow" << std::endl;
+    std::cout << " Meow, Meow" << std::endl;
 }
 
 void Cat::setBrain(std::string word, int length)

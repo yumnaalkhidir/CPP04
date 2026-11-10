@@ -7,7 +7,7 @@ Dog::Dog()
     _brain = new Brain();
 }
 
-Dog::Dog(const Dog& copy) : Animal(copy)
+Dog::Dog(const Dog& copy) : AAnimal(copy)
 {
     std::cout << "Dog Copy Constructor called" << std::endl;
     _brain = new Brain(*copy._brain);
@@ -18,7 +18,7 @@ Dog& Dog::operator=(const Dog& copy)
     std::cout << "Dog Copy Assignment Operator called" << std::endl;
     if (this != &copy)
     {
-        Animal::operator=(copy);
+        AAnimal::operator=(copy);
         delete _brain;
         _brain = new Brain(*copy._brain);
     }
@@ -33,7 +33,7 @@ Dog::~Dog()
 
 void Dog::makeSound()
 {
-    std::cout << _type << " Woof, Woof" << std::endl;
+    std::cout << " Woof, Woof" << std::endl;
 }
 
 void Dog::setBrain(std::string word, int length)

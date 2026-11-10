@@ -33,7 +33,7 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-    std::cout << _type << " Meow, Meow" << std::endl;
+    std::cout << " Meow, Meow" << std::endl;
 }
 
 void Cat::setBrain(std::string word, int length)
